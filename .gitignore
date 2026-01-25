@@ -35,7 +35,8 @@ venv.bak/
 .env.*.local
 *.env
 
-# Model Files (Large) - but keep essential ones for backend
+# Model Files (Large) - Use Git LFS or store separately
+# These files are too large for regular Git (600+ MB)
 *.pth
 *.pt
 *.ckpt
@@ -43,14 +44,12 @@ venv.bak/
 *.pb
 *.onnx
 
-# Keep essential model files for backend to run
-!Backend/prithvi_model/Prithvi_EO_V1_100M.pt
-!Backend/Model/checkpoints/prithvi_soil_best.pth
-!Backend/Model/checkpoints/prithvi_soil_final.pth
-
-# Ignore other model directories (but allow Backend/Model/checkpoints)
+# Model directories
+**/checkpoints/
 **/models/
 **/weights/
+Backend/prithvi_model/*.pt
+Backend/prithvi_model/*.pth
 
 # Data Files (Large)
 Data/
