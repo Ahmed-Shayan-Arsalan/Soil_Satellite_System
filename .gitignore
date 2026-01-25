@@ -35,16 +35,22 @@ venv.bak/
 .env.*.local
 *.env
 
-# Model Files (Large)
+# Model Files (Large) - but keep essential ones for backend
 *.pth
 *.pt
 *.ckpt
 *.h5
 *.pb
 *.onnx
-checkpoints/
-models/
-weights/
+
+# Keep essential model files for backend to run
+!Backend/prithvi_model/Prithvi_EO_V1_100M.pt
+!Backend/Model/checkpoints/prithvi_soil_best.pth
+!Backend/Model/checkpoints/prithvi_soil_final.pth
+
+# Ignore other model directories (but allow Backend/Model/checkpoints)
+**/models/
+**/weights/
 
 # Data Files (Large)
 Data/
