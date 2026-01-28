@@ -51,6 +51,12 @@ venv.bak/
 Backend/prithvi_model/*.pt
 Backend/prithvi_model/*.pth
 
+# === Explicitly keep main Prithvi backbone + best fine-tuned checkpoint ===
+!Backend/prithvi_model/
+!Backend/prithvi_model/Prithvi_EO_V1_100M.pt
+!Backend/Model/checkpoints/
+!Backend/Model/checkpoints/prithvi_soil_best.pth
+
 # Data Files (Large)
 Data/
 *.tif
