@@ -1,4 +1,10 @@
-const API_BASE = '/api'
+// Determine API base URL:
+// - In production, you can set VITE_API_BASE_URL to the Render URL
+//   e.g. VITE_API_BASE_URL="https://soil-satellite-system.onrender.com"
+// - In development, we default to a local proxy at /api (configured in Vite)
+const API_BASE =
+  import.meta.env.VITE_API_BASE_URL?.trim() ||
+  '/api'
 
 export async function analyzeImage(file, options = {}) {
   const formData = new FormData()
